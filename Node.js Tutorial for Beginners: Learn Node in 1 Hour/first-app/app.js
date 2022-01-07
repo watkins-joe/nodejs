@@ -39,3 +39,5 @@ console.log(module);
 // module is not a global object. it appears to be, but it is not.
 
 // in node, every file is a module. all functions are variables defined in that file are scoped to that module. they're not available outside of the module, unless we do a little more work.
+
+// node.js uses commonJS modules by default which uses require(...) to import external dependencies

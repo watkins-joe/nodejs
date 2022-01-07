@@ -5,8 +5,6 @@ function logMessage(message) {
   console.log(message);
 }
 
-// module.exports is the commonJS format of exporting
-
 // add log to exports object
 module.exports.log = logMessage;
 
