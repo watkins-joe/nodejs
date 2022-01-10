@@ -12,6 +12,7 @@
 
 console.log(module);
 
+const logMessage = require("./logger");
 // logs a Module object, a JSON object with key-value pairs.
 
 /**
@@ -41,3 +42,17 @@ console.log(module);
 // in node, every file is a module. all functions are variables defined in that file are scoped to that module. they're not available outside of the module, unless we do a little more work.
 
 // node.js uses commonJS modules by default which uses require(...) to import external dependencies
+
+const log = require("./logger");
+
+// console.log(logger); // { log: [Function: logMessage] }
+
+// logger.log("message"); // message
+
+// AFTER changing export to module.exports = log
+
+// now, that logger is no longer an object
+
+// log is a function that we can call directly.
+
+log("test");

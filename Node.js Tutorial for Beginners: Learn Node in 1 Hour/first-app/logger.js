@@ -6,4 +6,7 @@ function logMessage(message) {
 }
 
 // add log to exports object
-module.exports.log = logMessage;
+// module.exports.log = logMessage;
+
+// changing export so that we can export this as a function instead of an object
+module.exports = logMessage;
