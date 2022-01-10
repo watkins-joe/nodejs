@@ -1,3 +1,10 @@
+console.log(__filename); // /Users/joewatkins/Documents/Local Coursework/Nodejs/Node.js Tutorial for Beginners: Learn Node in 1 Hour/first-app/logger.js
+console.log(__dirname); // /Users/joewatkins/Documents/Local Coursework/Nodejs/Node.js Tutorial for Beginners: Learn Node in 1 Hour/first-app
+
+// __filename is the directory of where the file is located
+
+// __dirname is the parent directory of there the file is located.
+
 const url = "http://mylogger.io/log";
 
 function logMessage(message) {
