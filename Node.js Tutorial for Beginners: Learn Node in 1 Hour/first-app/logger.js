@@ -7,6 +7,3 @@ function logMessage(message) {
 
 // add log to exports object
 module.exports.log = logMessage;
-
-// add url to exports object
-module.exports.endPoint = url;
