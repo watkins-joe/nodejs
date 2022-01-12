@@ -94,3 +94,9 @@
 // can also do things in a blocking or non-blocking way.
 
 // any time you see a function that ends in 'sync', think of 'BLOCKING' behavior
+
+// in other words, it will need to finish all of its work before your other code can run
+
+// we can read a text file in node by passing the path to that file, and then specify the encoding as 'utf8'
+
+// reading a file may take a while, especially if it is a very large file.
