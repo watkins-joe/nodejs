@@ -69,3 +69,83 @@ console.log(myModule); // { memes: 'i love them' }
 // npm init to get started, npm init -y (the -y flag sets default options)
 
 // this creates a package.json file in the root of the app
+
+// this file contains metadata about your project, but most importantly, it keeps track of the dependencies that we use in our projects
+
+// install express with npm i express
+
+// express is a minimal web app framework
+
+// after running the command, a few things changed in our package.json file
+
+// npm added 'express' to our dependencies list.
+
+// the dependencies object allows us to manage multiple dependencies in a project and reinstall them all at once in a different project or system
+
+// the raw source code for the dependencies live in the /node_modules directory
+
+// you should NEVER touch or write code inside of the node_nodules directory.
+
+// now with the package installed, we can import it by name in our JS code. in this case, we simply require express
+
+const express = require("express");
+
+// we have to initialize our app to make use of the express import
+
+const app = express();
+
+// our server will live on a url. when a client makes a request to this url in the browser, the server will respond with some html.
+
+// in our code, we will first create an instance of an express app.
+
+// an express app allows us to create multiple URLS and endpoints the user can navigate to in the browser.
+
+// we then define code for the server to handle those requests.
+
+// when the user navigates to a url in the browser, it's what is known as a GET request, meaning they are requesting some data on the server and are NOT trying to modify or update anythinf on the server.
+
+// with express, we can set up an endpoint like that by calling 'app.get()'
+
+// the first argument of .get() is the URL the user will navigate to.
+
+// in this case, we will just use the forward slash '/'.
+
+// the second argument is a callback function
+
+// you can think of every request to this URL as an event. and then you handle this event with this function
+
+// express gives us two parameters in this callback function --> the request and the response.
+
+// the request is the incoming data from the user.
+
+// in this example, we don't really need to parse any data from the request, however in many cases you may want to look at the headers or the body of the request to authenticate the user or understand what the user is trying to do.
+
+// at this point, we need to implement the code to handle the request. what we want to do is read some HTML from our file system and then send that back down to the browser.
+
+// in our source code, we can then import readFile from node's system module, just like we did earlier.
+
+// then, in our callback function here, we will have access to the HTML string and we can send a response back down to the client by calling response.send(html)
+
+// we can also handle any errors in the callback, we can handle that by sending a response with the .status() method and chaining the .send() with a parameter of the error message you want to send to the user as a string. this is so the user knows something went wrong on the server.
+
+app.get("/", (request, response) => {
+  readFile("./home.html", "utf8", (err, html) => {
+    if (err) {
+      response.status(500).send("sorry, out of order");
+    }
+
+    response.send(html);
+  });
+});
+
+// now, we just need to tell our express app start listening to incoming requests.
+
+// we do that by defining a port which will normally come from a node environment variable.
+
+// this is done with the app object and calling the listen() method on the app object. it receives the port to be used as argument one, and a callback function as a second argument that is called when the app starts up
+
+app.listen(process.env.PORT || 3000, () =>
+  console.log(`App available on http://localhost:3000`)
+);
+
+// you can start your app by running 'node .' in the command line, which runs node in your current working directory
