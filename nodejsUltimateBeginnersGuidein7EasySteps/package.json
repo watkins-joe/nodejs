@@ -1,0 +1,12 @@
+{
+  "name": "nodejsUltimateBeginnersGuidein7EasySteps",
+  "version": "1.0.0",
+  "description": "https://www.youtube.com/watch?v=ENrzD9HAZK4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
