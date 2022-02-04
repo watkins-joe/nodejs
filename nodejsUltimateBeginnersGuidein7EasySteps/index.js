@@ -149,3 +149,11 @@ app.listen(process.env.PORT || 3000, () =>
 );
 
 // you can start your app by running 'node .' in the command line, which runs node in your current working directory
+
+// opening it in the browser at the url in the console.log should show our home.html document.
+
+// one important thing to know at this point -- callbacks can we very difficult to worth with.
+
+// especially, as your app grows in complexity.
+
+// a state known as callback hell
