@@ -144,7 +144,7 @@ app.get("/", (request, response) => {
 
 // this is done with the app object and calling the listen() method on the app object. it receives the port to be used as argument one, and a callback function as a second argument that is called when the app starts up
 
-app.listen(process.env.PORT || 3000, () =>
+app.listen(process.env.PORT || 3001, () =>
   console.log(`App available on http://localhost:3000`)
 );
 
